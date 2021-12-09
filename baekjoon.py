@@ -1,16 +1,9 @@
-import sys
+def d(n):
+    return n + (n//10000) + (n//1000) + (n//100) + (n//10) + (n%10)
+    
+def self_number(num):
+    for i in num:
+        
+        return print("{0}".format(i))
 
-c = int(sys.stdin.readline())
-
-for j in range(c):
-    score = list(map(int, sys.stdin.readline().split()))
-    sum = 0
-    well = 0
-    for i in range(1, score[0]+1):
-        sum += score[i]
-    avg = sum / score[0]
-    for i in range(1, score[0]+1):
-        if score[i] > avg:
-            well += 1
-    print("{0:.3f}%".format(well / score[0] * 100))
-    del score[0:(score[0]+1)]
+self_number(10000)
