@@ -12,8 +12,10 @@ def d(n):
 
 
 arr = list(range(1, 20))
+arr_remove = list()
 for i in range(20):
     for j in range(i):
         if arr[i] == d(j+1):
-            arr.remove(i)
+            arr_remove.append(i)
+    arr = arr - arr_remove
     print(arr[i])
