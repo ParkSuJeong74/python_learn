@@ -54,3 +54,64 @@ print(python.find("Java"))  # -1
 
 # 갯수 세기
 print(python.count("n"))  # 2
+
+
+# 문자열 포맷
+# %
+print("나는 %d살입니다." % 20)  # s로도 가능
+print("나는 %s를 좋아합니다." % "파이썬")
+print("Apple %c로 시작합니다." % "A")  # s로도 가능
+
+# 두 개
+print("나는 %s과 %s를 좋아합니다." % ("파이썬", "Java"))
+
+# format index
+print("나는 {0}과 {1}를 좋아합니다.".format("파이썬", "Java"))
+print("나는 {1}과 {0}를 좋아합니다.".format("파이썬", "Java"))  # 반대
+
+# format 변수
+print("나는 {age}살이고 {lang}를 좋아합니다.".format(age=20, lang="Java"))
+
+age = 25
+lang = "파이썬"
+print(f"나는 {age}살이고 {lang}를 좋아합니다.")
+
+
+# 탈출문자
+# \n : 개행
+
+print("안녕하세요\n잘부탁합니다")
+print("저는 \"사람\"입니다")  # 저는 "사람"입니다
+
+# \\ == \
+print("C:\\Users\\dell\\vscode-workspace\\python_learn")  # C:\Users\Drimsys\vscode-workspace\python_learn
+
+# \r : 커서를 맨 앞으로
+print("Red Apple\rPine")  # PineApple
+
+# \b : 백스페이스 (한글자 삭제)
+print("Redd\b Apple")  # Red Apple
+
+# \t : tab
+print("Red\tApple")  # Red     Apple
+
+
+# quiz
+'''
+사이트별로 비밀번호를 만들어주는 프로그램
+http://naver.com
+규칙1 : http:// 부분은 제외 => naver.com
+규칙2 : 처음 만나는 점(.) 이후 부분은 제외 => naver
+규칙3 : 남은 글자 중 처음 세자리 + 글자 갯수 + 글자 내 'e' 갯수 + "!"로 구성
+
+출력:
+생성된 비밀번호 : nav51!
+
+'''
+
+url = "http://naver.com"
+my_url = url.replace("http://", "")
+my_url = my_url[:my_url.index('.')]
+password = my_url[:3]+str(len(my_url))+str(my_url.count('e'))+"!"
+
+print("생성된 비밀번호 : {0}".format(password))
